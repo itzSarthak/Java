@@ -47,6 +47,53 @@ public class Main
         ip = input.replace('J','C');
         System.out.println(ip);
 
+
+        String ip;
+        //ip = scanner.nextLine();
+        ip = "Hello";
+
+        // String Builder in Java
+
+        /*
+            In Java, StringBuilder is a mutable class that allows you to modify and manipulate strings
+            without creating new objects, which is especially useful in DSA problems where efficiency is key.
+
+            $$ Mutability: Unlike regular String in Java, StringBuilder allows changes to the sequence of characters directly.
+
+            $$ Efficiency: When you perform many string manipulations (appending, inserting, or deleting),
+                StringBuilder is faster than concatenating String objects because it doesn’t create multiple temporary strings.
+        */
+
+        StringBuilder sb = new StringBuilder(ip);
+
+        // Appending in to the input string
+        sb.append("World");
+        System.out.println("Resultant (append) : " + sb.toString());
+
+        // Inserting in to the input string
+        sb.insert(5,','); // Hello,World
+        sb.insert(6,' '); // Hello, World
+        sb.insert(12,'!'); // Hello, World!
+        sb.insert(12,'!'); // Hello, World!!
+
+        System.out.println("Resultant (insert) : " + sb.toString());
+
+        // Deleting an element form the input
+        // s --> start index (inclusive)
+        // e --> end index (exclusive)
+        sb.delete(12,13);
+        System.out.println("Resultant (delete) : " + sb.toString());
+
+        // Replacing a part from the input
+        sb.replace(7, sb.length() - 1, "Java");
+        System.out.println("Resultant (replace) : " + sb.toString());
+
+        // Reversal of a string
+        sb.reverse();
+        System.out.println("Final Result : " + sb.toString());
+
+        ip = sb.toString();
+
         scanner.close();
     }
 }
